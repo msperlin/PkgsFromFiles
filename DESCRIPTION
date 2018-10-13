@@ -1,0 +1,19 @@
+Package: PkgsFromFiles
+Title: Finding and installing packages used in R and RMarkdown files
+Version: 0.5
+Date: 2018-10-13
+Authors@R: person("Marcelo", "Perlin", email = "marceloperlin@gmail.com", role = c("aut", "cre"))
+Description: Includes functions for finding and installing used R packages from local scripts and Rmarkdown files.
+Depends:
+    R (>= 3.5.0)
+Imports: stringr,XML, dplyr, readr, stringdist, curl
+License: GPL-2
+BugReports: https://github.com/msperlin/PkgsFromFiles/issues
+URL: https://github.com/msperlin/PkgsFromFiles/
+LazyData: true
+RoxygenNote: 6.1.0
+Suggests: knitr,
+    rmarkdown,
+    testthat,
+    ggplot2
+VignetteBuilder: knitr
