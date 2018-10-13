@@ -18,7 +18,7 @@ pff_check_install_pkgs(pkg.in, my.available.packages,
 \item{my.repository}{Url of CRAN repository (default = "https://cloud.r-project.org" )}
 }
 \value{
-A dataframe with information about the result of instalation
+A dataframe with information about the result of the instalation
 }
 \description{
 This function will check if input package in pkg.in is installed and, if not, installs it from a chosen repository

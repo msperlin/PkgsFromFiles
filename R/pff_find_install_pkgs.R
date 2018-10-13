@@ -59,7 +59,7 @@ pff_find_and_install_pkgs <- function(folder.in,
   cat('\n\nSummary:')
   cat(paste0('\n\t',
              'Found ', sum(df.out$status.message == 'Already installed'), ' packages already installed'))
-  cat(paste0('\n\tInstalled ', sum(df.out$status.message == 'Instalation Ok'), ' packages'))
+  cat(paste0('\n\tHad to install ', sum(df.out$status.message == 'Instalation Ok'), ' packages'))
   cat(paste0('\n\tInstalation failed for ', sum(!df.out$installation), ' packages'))
   cat(paste0('\n\t\t',
              sum(df.out$status.message == 'Instalation failed, pkg not in CRAN'), ' due to package not being found in CRAN'))

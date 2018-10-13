@@ -17,7 +17,7 @@ pff_find_pkgs_from_file <- function(f.in) {
     stop('Function pf_find_pkgs_from_file only accepts a single file')
   }
 
-  txt.out <- paste(readLines(f.in), collapse = '\n')
+  txt.out <- paste(readLines(f.in, warn = FALSE), collapse = '\n')
 
   out.req.1 <- stringr::str_match_all(txt.out, pattern = 'require\\(\"(.*?)\"\\)')[[1]]
   out.req.2 <- stringr::str_match_all(txt.out, pattern = 'require\\((.*?)\\)')[[1]]
@@ -98,7 +98,6 @@ pff_find_R_files_from_folder <- function(folder.in, do.recursive = TRUE){
 
 }
 
-
 #' Checks and installs a single package
 #'
 #' This function will check if input package in pkg.in is installed and, if not, installs it from a chosen repository
@@ -107,7 +106,7 @@ pff_find_R_files_from_folder <- function(folder.in, do.recursive = TRUE){
 #' @param my.available.packages Names of locally available (installed) packages
 #' @inheritParams pff_find_and_install_pkgs
 #'
-#' @return A dataframe with information about the result of instalation
+#' @return A dataframe with information about the result of the instalation
 #' @export
 #'
 #' @examples
