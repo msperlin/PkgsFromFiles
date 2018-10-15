@@ -40,7 +40,7 @@ pff_plot_summary_pkgs <- function(folder.in,
   p <- ggplot2::ggplot(df.to.plot, ggplot2::aes(y = stats::reorder(my.count, my.count),
                                                 x = stats::reorder(pkgs, my.count))) +
     ggplot2::geom_col() + ggplot2::coord_flip() +
-    ggplot2::labs(y = 'Number of package occurences in folder',
+    ggplot2::labs(y = 'Number times used in a R files',
                   x = 'Package Name')
 
   return(p)
