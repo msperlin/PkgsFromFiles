@@ -102,11 +102,11 @@ pff_find_R_files_from_folder <- function(folder.in, do.recursive = TRUE){
 #'
 #' This function will check if input package in pkg.in is installed and, if not, installs it from a chosen repository
 #'
-#' @param pkg.in Name of package to be installed
+#' @param pkg.in Name of the package to be installed
 #' @param my.available.packages Names of locally available (installed) packages
 #' @inheritParams pff_find_and_install_pkgs
 #'
-#' @return A dataframe with information about the result of the instalation
+#' @return A dataframe with information about the result of the installation
 #' @export
 #'
 #' @examples
@@ -129,13 +129,13 @@ pff_check_install_pkgs <- function(pkg.in,
       flag <- pkg.in %in% my.installed.pkgs
 
       if (flag) {
-        my.message = 'Instalation Ok'
+        my.message = 'Installation OK'
         cat(paste0('\t', my.message))
         return(dplyr::data_frame(pkg = pkg.in,
                                  status.message = my.message,
                                  installation =TRUE))
       } else {
-        my.message = 'Instalation Failed (missing external dependencies?)'
+        my.message = 'Installation failed (missing external dependencies?)'
         cat(paste0('\t', my.message))
         return(dplyr::data_frame(pkg = pkg.in,
                                  status.message = my.message,
@@ -143,7 +143,7 @@ pff_check_install_pkgs <- function(pkg.in,
       }
 
     } else {
-      my.message = 'Instalation failed, pkg not in CRAN'
+      my.message = 'Installation failed, pkg not in CRAN'
       cat(paste0('\t', my.message))
       return(dplyr::data_frame(pkg = pkg.in,
                                status.message = my.message,
