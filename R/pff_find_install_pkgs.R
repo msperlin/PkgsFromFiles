@@ -29,31 +29,36 @@ pff_find_and_install_pkgs <- function(folder.in,
   if (!flag) {
     stop(paste0('Folder ', folder.in, ' does not exists.. check your arguments'))
   }
-
+  
   flag <- is.logical(do.recursive)
   if (!flag) {
     stop(paste0('Folder ', folder.in, ' does not exists.. check your arguments'))
   }
-
+  
   df.files <- pff_find_R_files_from_folder(folder.in, do.recursive)
-
+  
   if (nrow(df.files) == 0) {
     stop(paste0('Found 0 R related files in folder ',folder.in, '\nYou should check your inputs.'))
   }
-
+  
   cat(paste0('\nChecking available pkgs from ', my.repository))
   my.available.packages <- utils::available.packages(repos = my.repository)[, 1]
-
+  
   all.pkgs <- unlist(lapply(df.files$pkgs,
                             FUN = function(x) stringr::str_split(x, ' ; ')[[1]]))
-
+  
+  # Only keep a unique list of packages to make them install once
+  all.pkgs <- all.pkgs[!duplicated(all.pkgs)]
+  
+  # Remove NA
   all.pkgs <- all.pkgs[!is.na(all.pkgs)]
-
+  
+  
   cat('\nChecking and installing missing pkgs')
   l.out <- lapply(X = all.pkgs,
                   FUN = pff_check_install_pkgs,
                   my.available.packages = my.available.packages)
-
+  
   df.out <- dplyr::bind_rows(l.out)
 
   cat('\n\nSummary:')
