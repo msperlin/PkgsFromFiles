@@ -1,5 +1,5 @@
 Package: PkgsFromFiles
-Title: Finding and installing packages used in R and RMarkdown files
+Title: Finding and Installing Packages Used in R and RMarkdown Files
 Version: 0.5
 Date: 2018-10-13
 Authors@R: person("Marcelo", "Perlin", email = "marceloperlin@gmail.com", role = c("aut", "cre"))

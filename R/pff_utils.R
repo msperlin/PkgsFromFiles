@@ -5,12 +5,14 @@
 #' @param f.in File to search for pattern
 #'
 #' @return A character object with all packages, separated by ' ; '
-#' @export
 #'
 #' @examples
 #'
+#' \dontrun{
 #' my.f <- system.file('extdata/Example_Script_1.R', package = 'PkgsFromFiles')
 #' pkg.out <- pff_find_pkgs_from_file(my.f)
+#' }
+#'
 pff_find_pkgs_from_file <- function(f.in) {
 
   if (length(f.in) > 1) {
@@ -117,7 +119,11 @@ pff_check_install_pkgs <- function(pkg.in,
                                    my.repository = "https://cloud.r-project.org" ){
   cat('\nInstalling', pkg.in)
 
-  my.installed.pkgs <- utils::installed.packages(lib.loc = my.library.path)[ ,1]
+  # Following message from CRAN, avoiding call to utils::installed.packages()
+  #my.installed.pkgs <- utils::installed.packages(lib.loc = my.library.path)[ ,1]
+
+  #  using custom function (pkgs from folders)
+  my.installed.pkgs <- pff_find_packages_from_folder(my.library.path)
 
   if ( !(pkg.in %in% my.installed.pkgs) ){
 
@@ -160,4 +166,20 @@ pff_check_install_pkgs <- function(pkg.in,
 
 }
 
+#' Checks for installed packages based on local library folder
+#'
+#' @param lib.path Path of libraries files
+#'
+#' @return Char vector of installed packages
+#' @export
+#'
+#' @examples
+#' my.pkgs <- pff_find_packages_from_folder()
+pff_find_packages_from_folder <- function(lib.path = .libPaths()[1]) {
+
+  my.pkgs <- basename(list.dirs(lib.path,
+                                recursive = FALSE))
+
+  return(my.pkgs)
+}
 

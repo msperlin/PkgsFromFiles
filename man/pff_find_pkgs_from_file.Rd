@@ -17,6 +17,9 @@ This function will search the names of R packages used in the script
 }
 \examples{
 
+\dontrun{
 my.f <- system.file('extdata/Example_Script_1.R', package = 'PkgsFromFiles')
 pkg.out <- pff_find_pkgs_from_file(my.f)
+}
+
 }

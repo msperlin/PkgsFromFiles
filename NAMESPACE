@@ -3,5 +3,5 @@
 export(pff_check_install_pkgs)
 export(pff_find_R_files_from_folder)
 export(pff_find_and_install_pkgs)
-export(pff_find_pkgs_from_file)
+export(pff_find_packages_from_folder)
 export(pff_plot_summary_pkgs)
