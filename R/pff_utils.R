@@ -6,6 +6,8 @@
 #'
 #' @return A character object with all packages, separated by ' ; '
 #'
+#' @export
+#'
 #' @examples
 #'
 #' \dontrun{
