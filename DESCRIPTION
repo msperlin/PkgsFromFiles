@@ -5,7 +5,7 @@ Date: 2018-10-19
 Authors@R: person("Marcelo", "Perlin", email = "marceloperlin@gmail.com", role = c("aut", "cre"))
 Description: Includes functions for finding and installing used R packages from local scripts and Rmarkdown files.
 Depends:
-    R (>= 3.5.0)
+    R (>= 3.4.0)
 Imports: stringr,XML, dplyr, readr, stringdist, curl
 License: GPL-2
 BugReports: https://github.com/msperlin/PkgsFromFiles/issues
