@@ -4,9 +4,12 @@
 \alias{pff_check_install_pkgs}
 \title{Checks and installs a single package}
 \usage{
-pff_check_install_pkgs(pkg.in, my.available.packages,
+pff_check_install_pkgs(
+  pkg.in,
+  my.available.packages,
   my.library.path = .libPaths()[1],
-  my.repository = "https://cloud.r-project.org")
+  my.repository = "https://cloud.r-project.org"
+)
 }
 \arguments{
 \item{pkg.in}{Name of the package to be installed}

@@ -4,9 +4,12 @@
 \alias{pff_find_and_install_pkgs}
 \title{Finds and installs packages used in R related files}
 \usage{
-pff_find_and_install_pkgs(folder.in, do.recursive = TRUE,
+pff_find_and_install_pkgs(
+  folder.in,
+  do.recursive = TRUE,
   my.library.path = .libPaths()[1],
-  my.repository = "https://cloud.r-project.org")
+  my.repository = "https://cloud.r-project.org"
+)
 }
 \arguments{
 \item{folder.in}{Folder to search for R related files}

@@ -4,8 +4,7 @@
 \alias{pff_plot_summary_pkgs}
 \title{Plots a summary of used packages fround in files from a given folder}
 \usage{
-pff_plot_summary_pkgs(folder.in, n.most.used.pkgs = 10,
-  do.recursive = TRUE)
+pff_plot_summary_pkgs(folder.in, n.most.used.pkgs = 10, do.recursive = TRUE)
 }
 \arguments{
 \item{folder.in}{Folder to search for R related files}

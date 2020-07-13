@@ -11,7 +11,7 @@ License: GPL-2
 BugReports: https://github.com/msperlin/PkgsFromFiles/issues
 URL: https://github.com/msperlin/PkgsFromFiles/
 LazyData: true
-RoxygenNote: 6.1.0
+RoxygenNote: 7.1.1
 Suggests: knitr,
     rmarkdown,
     testthat,
